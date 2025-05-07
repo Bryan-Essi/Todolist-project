@@ -4,13 +4,13 @@ Une API simple pour gérer une liste de tâches (Todo) développée avec Spring 
 
 ## 🛠 Technologies Utilisées
 - **Framework Backend** : Spring Boot 3.x
+- **Logiciel** : Intellij Idea
 - **Base de données** : 
   - PostgreSQL (production)
 - **ORM** : Spring Data JPA
 - **Validation** : Jakarta Bean Validation
 - **Outils** : 
   - Lombok (gestion des getters/setters)
-  - HikariCP (pool de connexions)
   - Maven (gestion des dépendances)
 
 ## 🚀 Fonctionnalités
@@ -22,18 +22,21 @@ Une API simple pour gérer une liste de tâches (Todo) développée avec Spring 
 - Gestion des erreurs
 
 
-## 🚀 Exemple de Lister toutes les tâches
-@RestController
-@RequestMapping("/todos")
-public class TodoController {
+## 🚀 Exemple de comment faire une requêtes POST (création) dans mon postman. 
+1-Ouvrez Postman
 
-    private final TodoService todoService;
+2-Créez une nouvelle collection (ex: "User Management API")
 
-    @GetMapping
-    public ResponseEntity<List<Todo>> getAllTodos() {
-        return ResponseEntity.ok(todoService.findAll());
-    }
-}
+3-Cliquez sur "+ New" → "HTTP Request"
+
+4- Configuration de la requête
+Méthode : POST
+URL : http://localhost:8080/api/users (adaptez à votre endpoint)
+
+5- Body (JSON)
+Inserer les informations tel que { name, email, password }
+
+6- Cliquez sur "Send"
 
 
 ## 📋 Prérequis
@@ -47,6 +50,11 @@ public class TodoController {
 ### 1. Cloner le dépôt
 ```bash
 https://github.com/Bryan-Essi/Todolist-project
+
+### 2. Liens pour installer les differentes dependances et lancer l'application
+-mvn clean install -U
+-mvn spring-boot:run
+
 
 ## Liens swagger
 http://localhost:8081/swagger-ui/index.html
